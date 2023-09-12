@@ -4,16 +4,24 @@ package lesson_04
 
 fun main() {
 
+    var input: String?
+    val crew: Int
+    val provision: Int
+
     println("Есть ли повреждения на корпусе корабля? Да или Нет")
     val damage = readLine() == "Да"
     println("Повреждения: $damage\n")
 
     println("Укажите число экипажа")
-    val crew = readLine()!!.toInt()
+    input = readLine()
+    if( input == "" ) crew = 0
+    else crew = input?.toInt()!!
     println("Экипаж в составе: $crew чел.\n")
 
     println("Сколько ящиков шампанского на борту?")
-    val provision = readLine()!!.toInt()
+    input = readLine()
+    if( input == "" ) provision = 0
+    else provision = input?.toInt()!!
     println("Провизии $provision ящ.\n")
 
     println("Погода благоприятная? Да или Нет")
