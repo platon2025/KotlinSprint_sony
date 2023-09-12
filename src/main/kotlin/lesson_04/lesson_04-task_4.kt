@@ -11,5 +11,8 @@ fun main() {
     exercises.put("Упражнения для спины", evenDay)
     exercises.put("Упражнения для пресса", oddDay)
 
-    exercises.forEach { (exs, day) -> println("$exs:\t${ dayNumber % 2 == day}") }
+    var output = ""
+    exercises.forEach { (exs, day) -> output += "$exs:\t ${ dayNumber % 2 == day}\n" }
+
+    println (output)
 }
