@@ -2,14 +2,12 @@ package lesson_04
 
 /** Created by Platon2025 */
 
+const val TOTAL_TABLES = 13
 fun main() {
-    val totalTables = 13
+    val freeTablesToday = 0
+    val freeTablesTomorrow = 4
+    val reservedTablesToday = TOTAL_TABLES - freeTablesToday
+    val reservedTablesTomorrow = TOTAL_TABLES - freeTablesTomorrow
 
-    val reservedTablesToday = 13
-    val reservedTablesTomorrow = 13 - 4
-
-    val freeTablesToday = totalTables > reservedTablesToday
-    val freeTablesTomorrow = totalTables > reservedTablesTomorrow
-
-    println("Доступность столиков на сегодня: $freeTablesToday\nДоступность столиков на завтра: $freeTablesTomorrow")
+    println("Доступность столиков на сегодня: ${TOTAL_TABLES > reservedTablesToday}\nДоступность столиков на завтра: ${TOTAL_TABLES > reservedTablesTomorrow}")
 }
