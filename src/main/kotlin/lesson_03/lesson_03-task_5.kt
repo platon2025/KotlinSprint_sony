@@ -4,9 +4,10 @@ package lesson_03
 
 fun main() {
     val input =  "D2-D4;0"
-    val from = input.substring(0,2)
-    val to = input.substring(3,5)
-    val step = input.substringAfter(';')
+    val parts = input.split('-',';')
+    val from = parts[0]
+    val to = parts[1]
+    val step = parts[2]
 
     println("From :\t$from")
     println("To :\t$to")
