@@ -15,5 +15,4 @@ fun main() {
     exercises.forEach { (exs, day) -> output += "$exs:\t ${ dayNumber % 2 == day}\n" }
 
     println (output)
-
 }
