@@ -8,6 +8,13 @@ fun main() {
     val freeTablesTomorrow = 4
     val reservedTablesToday = TOTAL_TABLES - freeTablesToday
     val reservedTablesTomorrow = TOTAL_TABLES - freeTablesTomorrow
+/*
+В задании написано :
 
-    println("Доступность столиков на сегодня: ${TOTAL_TABLES > reservedTablesToday}\nДоступность столиков на завтра: ${TOTAL_TABLES > reservedTablesTomorrow}")
+    Напиши программу, которая сообщает информацию о бронировании в момент запроса,
+    путем сравнения данных о свободных столах с данными о столах в ресторане.
+
+Не понял, в чем смысл такого сравнения, и зачем для этого вводить переменные с количеством забронированных столов
+*/
+    println("Доступность столиков на сегодня: ${ freeTablesToday > 0 }\nДоступность столиков на завтра: ${ freeTablesTomorrow > 0 }")
 }
