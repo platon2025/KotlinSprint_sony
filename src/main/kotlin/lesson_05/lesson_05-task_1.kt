@@ -3,23 +3,19 @@ package lesson_05
 /** Created by Platon2025 */
 
 fun main() {
+    val number1 = 7
+    val number2 = 5
+
     val input: String
     val message: String
-    val task = "Напиши математический пример на сложение двух положительных чисел (без пробелов)\nЦифры могут быть целыми или десятичными дробями"
-    val example: List<String>
+    val task = "Реши арифметический пример и введи ответ :"
     var result = false
 
-    println("Бот не сможет это сделать, а ты сможешь :\n$task")
+    println(task)
+    println("$number1 + $number2 = ")
 
     input = readln()
-    if (!input.isEmpty()) {
-        example = input?.split('+', '=')
-        if (example.size == 3 && input.contains('+') && input.contains('=')) {
-            if (example[0].toFloat() + example[1].toFloat() == example[2].toFloat()) {
-                result = true
-            }
-        }
-    }
+    if (!input.isEmpty()) result = number1 + number2 == input.toInt()
 
     if (result) message = "\"Добро пожаловать!\""
     else message = "\"Доступ запрещен!\""
