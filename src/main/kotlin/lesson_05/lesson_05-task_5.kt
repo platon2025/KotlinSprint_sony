@@ -46,14 +46,8 @@ fun main() {
     println(finalComment)
     println("\nЗагаданные числа : $winNumbers")
 
-
 }
 
-fun checkBet(bet: Int, secret: Set<Int>): Boolean {
-    return secret.contains(bet)
-}
+fun checkBet(bet: Int, secret: Set<Int>): Boolean = secret.contains(bet)
 
-fun getCommentOnResult(result: Boolean): String {
-    if (result) return "В яблочко !"
-    else return "Мимо"
-}
+fun getCommentOnResult(result: Boolean): String = if (result) "В яблочко !" else "Мимо"
