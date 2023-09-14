@@ -1,17 +1,14 @@
 package lesson_05
 
-import kotlin.random.Random
-
 /** Created by Platon2025 */
 
 const val MIN = 1
 const val MAX = 100
 fun main() {
-    val rand = Random(System.nanoTime())
-    val secret1 = (MIN..MAX).random(rand)
+    val secret1 = (MIN..MAX).random()
     var secret2: Int
     do {
-        secret2 = (MIN..MAX).random(rand)
+        secret2 = (MIN..MAX).random()
     } while (secret2 == secret1)
     val secret = mutableSetOf(secret1, secret2)
     val winNumbers = secret.toString()
