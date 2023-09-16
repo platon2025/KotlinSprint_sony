@@ -14,7 +14,7 @@ fun main() {
         и как собственно это организовать. Сделал без этого.  */
 
     for (i in 1..passwordLength) {
-        pos = (0 until string.length ).random()
+        pos = (0 until string.length).random()
         password += string[pos]
     }
     println(password)
