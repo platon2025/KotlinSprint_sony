@@ -13,21 +13,21 @@ fun main() {
 
     println("Сделайте первую ставку :")
     val bet1 = readln().toInt()
-    var result = checkBet(bet1, secret)
+    var result = betChecker(bet1, secret)
     if (result) {
         secret.remove(bet1)
         finalScore++
     }
-    println(getCommentOnResult(result))
+    println(getCommentOnBet(result))
 
     println("Сделайте вторую ставку")
     val bet2 = readln().toInt()
-    result = checkBet(bet2, secret)
+    result = betChecker(bet2, secret)
     if (result) {
         secret.remove(bet2)
         finalScore++
     }
-    println(getCommentOnResult(result))
+    println(getCommentOnBet(result))
 
     val finalComment = when (finalScore) {
         2 -> "Поздравляем! Вы выиграли главный приз!"
@@ -38,6 +38,6 @@ fun main() {
     println(finalComment)
 }
 
-fun checkBet(bet: Int, secret: Set<Int>): Boolean = secret.contains(bet)
+fun betChecker(bet: Int, secret: Set<Int>): Boolean = secret.contains(bet)
 
-fun getCommentOnResult(result: Boolean): String = if (result) "В яблочко !" else "Мимо"
+fun getCommentOnBet(result: Boolean): String = if (result) "В яблочко !" else "Мимо"
