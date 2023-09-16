@@ -8,7 +8,7 @@ fun main() {
     println("Введите число")
     val maxNum = readln().toInt()
     for (num in 0 .. maxNum step 2) {
-        outputString += "${num.toString()},"
+        outputString += "$num,"
     }
     outputString = outputString.dropLast(1)
     println("Все четные числа от 0 до $maxNum:\n$outputString")
