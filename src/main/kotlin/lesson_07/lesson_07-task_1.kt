@@ -4,7 +4,7 @@ package lesson_07
 
 fun main() {
 
-    val rangeLetters = 'a' .. 'z'
+    val rangeLetters = 'a'..'z'
     val rangeNumbers = '0'..'9'
 
     val p1 = rangeLetters.random().toString()
@@ -14,7 +14,7 @@ fun main() {
     val p5 = rangeLetters.random().toString()
     val p6 = rangeNumbers.random().toString()
 
-   val password = p1 + p2 + p3 + p4 + p5 + p6
+    val password = p1 + p2 + p3 + p4 + p5 + p6
 
     println(password)
 
