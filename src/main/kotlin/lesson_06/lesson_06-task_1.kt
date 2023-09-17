@@ -3,18 +3,14 @@ package lesson_06
 /** Created by Platon2025 */
 
 fun main() {
-    var verify = false
     val login: String
     val password: String
     var loginGiven: String
     var passwordGiven: String
 
-    println("Регистрация нового пользователя")
-    println()
-    println("Придумайте логин :")
+    println("Регистрация нового пользователя\n\nПридумайте логин :")
     login = readln()
-    println("Логин $login")
-    println("Придумайте пароль :")
+    println("Логин $login\n Придумайте пароль :")
     password = readln()
     println("Отлично! Теперь вы можете авторизоваться.")
     Thread.sleep(1000)
@@ -23,10 +19,10 @@ fun main() {
         loginGiven = readln()
         println("Введите пароль: ")
         passwordGiven = readln()
-        if (loginGiven == login && passwordGiven == password) {
-            verify = true
-        } else println("Пользователь с указанными данными не найден.\nПопробуйте ещё раз")
-    } while (!verify)
+        if (loginGiven != login || passwordGiven != password) {
+            println("Пользователь с указанными данными не найден.\nПопробуйте ещё раз")
+        }
+    } while (loginGiven != login || passwordGiven != password)
 
     println("Авторизация прошла успешно")
 }
