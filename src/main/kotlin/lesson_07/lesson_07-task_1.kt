@@ -18,17 +18,4 @@ fun main() {
 
     println(password)
 
-
-//    val passwordLength = 6
-//    val string = "0123456789absdefghijklmnopqrstuvwxyz"
-//    var pos: Int //позиция символа в строке
-//
-//    var password = ""
-//
-//    for (i in 1..passwordLength) {
-//        pos = (0 until string.length).random()
-//        password += string[pos]
-//    }
-//    println(password)
-
 }
