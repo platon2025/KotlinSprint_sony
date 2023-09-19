@@ -8,8 +8,7 @@ fun main() {
     val passwordLength = readln().toInt()
 
     var password = ""
-    for (i in 1..passwordLength) {
-        password += chars.random()
-    }
+    for (i in 1..passwordLength) password += chars.random()
+
     println("Пароль : $password")
 }
