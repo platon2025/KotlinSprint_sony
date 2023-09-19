@@ -1,13 +1,13 @@
 package lesson_06
 
 /** Created by Platon2025 */
-const val MIN_NUM = 1
-const val MAX_NUM = 9
 fun main() {
-    val secret = (MIN_NUM..MAX_NUM).random()
+    val minNum = 1
+    val maxNum = 9
+    val secret = (minNum..maxNum).random()
     var counter = 5
     var enter: Int
-    println("Загадано число от $MIN_NUM до $MAX_NUM")
+    println("Загадано число от $minNum до $maxNum")
     println("У тебя $counter попыток чтобы его угадать")
     println("Введи число :")
     do {
