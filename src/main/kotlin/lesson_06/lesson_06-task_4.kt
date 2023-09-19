@@ -12,12 +12,15 @@ fun main() {
     println("Введи число :")
     do {
         enter = readln().toInt()
-        if (enter == secret) break
+        if (enter == secret) {
+            println("Бинго! Это была великолепная игра!")
+            return
+        }
         else {
             counter--
             if (counter > 0) println("Не-а. Осталось $counter попыток")
         }
     } while (counter > 0)
-    if (counter > 0) println("Бинго! Это была великолепная игра!")
-    else println("Не удалось!\nБыло загадано число $secret")
+
+    println("Не удалось!\nБыло загадано число $secret")
 }
