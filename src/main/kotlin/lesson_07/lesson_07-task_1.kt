@@ -17,5 +17,4 @@ fun main() {
     val password = p1 + p2 + p3 + "$p4$p5$p6" //два варианта объединения char в строку (через приведение toString и прямую интерполяцию)
 
     println(password)
-
 }
