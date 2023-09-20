@@ -5,7 +5,8 @@ package lesson_08
 fun main() {
     println("Сколько ингредиентов в составе рецепта? Введите число :")
     val ingredientQty = readln().toInt()
-    val contents = arrayOfNulls<String>(ingredientQty)
+    val contents =
+        Array<String>(ingredientQty) { "" }  //как в данном случае применить arrayOf я так и не разобрался. Сделал так.
 
     for (i in 0 until ingredientQty) {
         if (i == 0) println("Введите первый ингредиент :")
@@ -14,8 +15,6 @@ fun main() {
         contents[i] = readln()
     }
 
-    var output = "Ваш состав ингредиентов: "
-    for (i in contents) output += "$i, "
-    println(output.substring(0, output.length - 2))
+    println("Ваш состав ингредиентов: ${contents.joinToString(", ")}.")
 
 }
