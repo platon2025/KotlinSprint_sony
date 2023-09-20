@@ -5,22 +5,17 @@ package lesson_08
 fun main() {
 
     val contents = arrayOf("свёкла", "картофель", "морковь", "капуста", "масло")
-    var output: String
 
-    output = "Список ингридиентов : "
-    for (i in contents) output += "$i, "
-    println(output.substring(0, output.length - 2))
+    println("Список ингридиентов : ${contents.joinToString(", ")}.")
 
     println("Какой ингридиент вы хотите заменить?")
-    val remove = readln()
+    val remove = readln().lowercase()
     if (!contents.contains(remove)) println("Ингредиента $remove нет в составе рецепта")
     else {
         println("На что вы хотели бы заменить $remove ?")
         contents[contents.indexOf(remove)] = readln()
 
-        output = "Ингредиент заменён\nОбновленный состав ингредиентов: "
-        for (i in contents) output += "$i, "
-        println(output.substring(0, output.length - 2))
+        println("Готово!\nВы сохранили следующий список: ${contents.joinToString(", ")}.")
     }
 
 }
