@@ -8,4 +8,5 @@ fun main() {
     val list = readln().split(',').map { it.trim() }
     println(list.sorted().joinToString(", "))
 
+
 }
