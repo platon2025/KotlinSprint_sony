@@ -5,20 +5,20 @@ package lesson_09
 fun main() {
     val qty = 5
     var input: String
-    val list: MutableList<String> = mutableListOf()
+    val set: MutableSet<String> = mutableSetOf()
 
     println("Давайте введем $qty ингредиентов для вашего блюда")
 
     for (i in 0 until qty) {
         println("Введите ингредиент №${i + 1}")
         input = readln().lowercase().trim()
-        while (input in list) {
+        while (input in set) {
             println("Ингредиент \"$input\" уже есть в списке\nВведите другой:")
             input = readln().lowercase().trim()
         }
-        list.add(input)
+        set.add(input)
     }
 
-    list.sort()
-    println("${list.joinToString(", ").replaceFirstChar { it.uppercase() }}.")
+    println("${set.sorted().joinToString (", ").replaceFirstChar { it.uppercase() }}.")
+
 }
