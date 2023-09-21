@@ -11,7 +11,8 @@ fun main() {
 }
 
 fun validatePassword(word: String): Boolean {
-    if (word.length < 4) {
+    val minLength = 4
+    if (word.length < minLength) {
         println("Логин или пароль недостаточно длинные")
         return false
     }
