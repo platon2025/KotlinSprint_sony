@@ -8,6 +8,7 @@ fun main() {
     println("Введите пароль :")
     if (!validatePassword(readln())) return
     println("Ваши данные приняты. Добро пожаловать!")
+
 }
 
 fun validatePassword(word: String): Boolean {
