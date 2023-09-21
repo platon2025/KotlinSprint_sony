@@ -6,9 +6,9 @@ fun main() {
     var humanWins = 0
 
     do {
-        if (newRound()) humanWins++
+        if (playRound()) humanWins++
         println("Хотите бросить ещё? Да или Нет")
-    } while (readln().trim().lowercase() == "да")
+    } while (readln().trim().equals("да", true))
 
     println("Вы выиграли $humanWins раз")
 
@@ -20,7 +20,7 @@ fun rollDices(): List<Int> {
 
 }
 
-fun newRound(): Boolean {
+fun playRound(): Boolean {
 
     var roll = rollDices()
     println("Компьютер бросил кубики. Результат ${roll[0]} + ${roll[1]}")
