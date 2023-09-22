@@ -12,13 +12,12 @@ fun main() {
     for (i in 0 until qty) {
         println("Введите ингредиент №${i + 1}")
         input = readln().lowercase().trim()
-        while (input in set) {
+        while (!set.add(input)) {
             println("Ингредиент \"$input\" уже есть в списке\nВведите другой:")
             input = readln().lowercase().trim()
         }
-        set.add(input)
     }
 
-    println("${set.sorted().joinToString (", ").replaceFirstChar { it.uppercase() }}.")
+    println("${set.sorted().joinToString(", ").replaceFirstChar { it.uppercase() }}.")
 
 }
