@@ -9,12 +9,12 @@ fun main() {
 }
 
 fun generatePassword(length: Int): String {
-    val chars1 = '0'..'9'
-    val chars2 = ' '..'/'
+    val numberChars = '0'..'9'
+    val specialChars = ' '..'/'
     var password = ""
     for (i in 1..length) {
-        if (i % 2 == 1) password += chars1.random()
-        else password += chars2.random()
+        if (i % 2 == 1) password += numberChars.random()
+        else password += specialChars.random()
     }
     return password
 }
