@@ -9,10 +9,10 @@ fun main() {
     var roll: List<Int>
 
     for (i in 1..rounds) {
-        roll = rollDices()
+        roll = rollDices3()
         println("Компьютер бросил кубики. Результат ${roll[0]} + ${roll[1]}")
         machineScore += roll[0] + roll[1]
-        roll = rollDices()
+        roll = rollDices3()
         Thread.sleep(1000)
         println("Человек бросил кубики. Результат ${roll[0]} + ${roll[1]}")
         humanScore += roll[0] + roll[1]
@@ -24,7 +24,7 @@ fun main() {
     else println("По итогам $rounds раундов результат равный $humanScore : $machineScore")
 }
 
-fun rollDices(): List<Int> {
+fun rollDices3(): List<Int> {
     val range = 1..6
     return listOf(range.random(), range.random())
 }
