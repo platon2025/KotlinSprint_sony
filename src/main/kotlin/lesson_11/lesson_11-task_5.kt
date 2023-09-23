@@ -118,7 +118,7 @@ class Forum5(
     private fun getNewThreadId() = this.threads.maxOf { it.id } + 1
     private fun getNewMessageId() = this.messages.maxOf { it.id } + 1
 
-}//*class Forum
+}
 
 class User5(
     val id: Int,
@@ -135,7 +135,7 @@ class User5(
         bio = readln()
     }
 
-}//*class User5
+}
 
 class Thread5(
     val id: Int,
@@ -145,7 +145,7 @@ class Thread5(
     val threadDate: Long = System.currentTimeMillis(),
 ) {
 
-} //*class Thread5
+}
 
 class Message5(
     val id: Int,
@@ -157,4 +157,4 @@ class Message5(
     val messageViews: Int = 0,
 ) {
 
-} //*class Message5
+}
