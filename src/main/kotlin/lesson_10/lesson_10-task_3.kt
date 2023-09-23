@@ -4,11 +4,11 @@ package lesson_10
 
 fun main() {
     println("Введите желаемую длину пароля:")
-    println("Ваш пароль: ${generatePassword(readln().toInt())}")
+    println("Ваш пароль: ${generatePassword3(readln().toInt())}")
 
 }
 
-fun generatePassword(length: Int): String {
+fun generatePassword3(length: Int): String {
     val numberChars = '0'..'9'
     val specialChars = ' '..'/'
     var password = ""
