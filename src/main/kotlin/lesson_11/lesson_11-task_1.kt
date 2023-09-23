@@ -11,3 +11,12 @@ fun main() {
     println("id: ${user2.id}\nlogin: ${user2.login}\npassword: ${user2.password}\nemail: ${user2.email}")
 
 }
+
+class User1(
+    val id: Int,
+    val login: String,
+    val password: String,
+    val email: String,
+) {
+
+}
