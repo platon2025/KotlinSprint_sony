@@ -3,21 +3,21 @@ package lesson_11
 /** Created by Platon2025 */
 
 fun main() {
-    val user1 = User5(1, "garry", "qwerty", "gpotter@gmail.com")
-    val user2 = User5(2, "erast", "123321", "fandorin@yandex.ru")
-    val user3 = User5(3, "oleg", "555", "oleg@mail.ru")
+    val user1 = User5(1, "garry", "qwerty", "gpotter@gmail.com",)
+    val user2 = User5(2, "erast", "123321", "fandorin@yandex.ru",)
+    val user3 = User5(3, "oleg", "555", "oleg@mail.ru",)
     val users = mutableListOf(user1, user2, user3)
 
-    val thread1 = Thread5(1, "Тема №1", 1, mutableListOf(1, 2, 3))
-    val thread2 = Thread5(2, "Тема №2", 2, mutableListOf(4, 5, 6))
+    val thread1 = Thread5(1, "Тема №1", 1, mutableListOf(1, 2, 3),)
+    val thread2 = Thread5(2, "Тема №2", 2, mutableListOf(4, 5, 6),)
     val threads = mutableListOf(thread1, thread2)
 
-    val message1 = Message5(1, 1, 1, "Тема №1", "Кто медведям лапы рвёт?")
-    val message2 = Message5(2, 2, 1, "Re: Тема №1", "Зайчиков под дождь кладёт?")
-    val message3 = Message5(3, 3, 1, "Re: Тема №1", "Танин мячик бросил в речку")
-    val message4 = Message5(4, 1, 2, "Тема №2", "Изломал бычку дощечку")
-    val message5 = Message5(5, 2, 2, "Re: Тема №2", "Каждый знает это кто")
-    val message6 = Message5(6, 3, 2, "Re: Тема №2", "Это Агния Барто")
+    val message1 = Message5(1, 1, 1, "Тема №1", "Кто медведям лапы рвёт?",)
+    val message2 = Message5(2, 2, 1, "Re: Тема №1", "Зайчиков под дождь кладёт?",)
+    val message3 = Message5(3, 3, 1, "Re: Тема №1", "Танин мячик бросил в речку",)
+    val message4 = Message5(4, 1, 2, "Тема №2", "Изломал бычку дощечку",)
+    val message5 = Message5(5, 2, 2, "Re: Тема №2", "Каждый знает это кто",)
+    val message6 = Message5(6, 3, 2, "Re: Тема №2", "Это Агния Барто",)
     val messages = mutableListOf(message1, message2, message3, message4, message5, message6)
 
     val forum = Forum5(users, threads, messages)
