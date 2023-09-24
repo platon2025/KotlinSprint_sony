@@ -6,8 +6,8 @@ fun main() {
 
     val firstName = "First Name"
     val secondName = "Second Name"
-    val faceTimeId = 1213141516
-    val phones = mutableMapOf(Pair("сотовый", 89999994242), Pair("рабочий", 89998884242))
+    val faceTimeId = "1213141516"
+    val phones = mutableMapOf(Pair("сотовый", "89999994242"), Pair("рабочий", "89998884242"))
     val email = "mail@mail.ru"
 
     val contact = Contact4(
@@ -31,8 +31,8 @@ class Contact4(
     var firstName: String = "",
     var secondName: String = "",
     var contactPicture: String = "",
-    val phones: MutableMap<String, Long> = mutableMapOf(),
-    var faceTimeId: Int = 0,
+    val phones: MutableMap<String, String> = mutableMapOf(),
+    var faceTimeId: String = "",
     var email: String = "",
     var isPinned: Boolean = false,
     val icons: List<Icon4> = listOf(
@@ -72,7 +72,7 @@ class Contact4(
         println("Контакт откреплён")
     }
 
-    private fun getPhoneByLabel(phoneLabel: String): Long = phones[phoneLabel] ?: 0
+    private fun getPhoneByLabel(phoneLabel: String): String = phones[phoneLabel] ?: ""
 
 }
 
