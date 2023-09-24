@@ -37,7 +37,7 @@ class Weather5(
         var dayTempsSum = 0
         var nightTempsSum = 0
         var rainyDaysNumber = 0
-        var averageAtmPressure = controlPoints.sumOf { it.atmPressure } / controlPoints.size
+        val averageAtmPressure = controlPoints.sumOf { it.atmPressure } / controlPoints.size
         var daysNumber = 0
 
         controlPoints.forEach {
