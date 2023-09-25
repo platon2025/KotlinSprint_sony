@@ -38,16 +38,14 @@ class Weather5(
         var nightTempsSum = 0
         var rainyDaysNumber = 0
         val averageAtmPressure = controlPoints.sumOf { it.atmPressure } / controlPoints.size
-        var daysNumber = 0
 
         controlPoints.forEach {
             dayTempsSum += it.dayTemp
             nightTempsSum += it.nightTemp
             if (it.isRainy == true) rainyDaysNumber++
-            daysNumber++
         }
 
-        println("Статистика за $daysNumber дней :\nСредняя дневная температура : ${dayTempsSum / daysNumber}\nСредняя ночная температура : ${nightTempsSum / daysNumber}\nСреднее атм.давление : $averageAtmPressure\nКоличество дождливых дней : $rainyDaysNumber")
+        println("Статистика за ${controlPoints.size} дней :\nСредняя дневная температура : ${dayTempsSum / controlPoints.size}\nСредняя ночная температура : ${nightTempsSum / controlPoints.size}\nСреднее атм.давление : $averageAtmPressure\nКоличество дождливых дней : $rainyDaysNumber")
 
     }
 }
