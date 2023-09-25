@@ -13,12 +13,12 @@ fun main() {
 
 }
 
-class Weather2(dayTemp: Int, nightTemp: Int, isRainy: Boolean, atmPressure: Int) {
+class Weather2(_dayTemp: Int, _nightTemp: Int, _isRainy: Boolean, _atmPressure: Int) {
 
-    var dayTemp = dayTemp
-    var nightTemp = nightTemp
-    var isRainy = isRainy
-    var atmPressure = atmPressure
+    var dayTemp = _dayTemp
+    var nightTemp = _nightTemp
+    var isRainy = _isRainy
+    var atmPressure = _atmPressure
 
     fun printWeatherInfo() {
         println("Дневная температура : $dayTemp\nНочная температура : $nightTemp\nДождь : $isRainy\nАтм.давление : $atmPressure\n")
