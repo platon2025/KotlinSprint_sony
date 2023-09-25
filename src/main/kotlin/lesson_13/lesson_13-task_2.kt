@@ -4,7 +4,7 @@ package lesson_13
 
 fun main() {
     val contact = Contact2("Зинаида", 89991005000, null)
-
+    contact.printContact()
 }
 
 class Contact2(
