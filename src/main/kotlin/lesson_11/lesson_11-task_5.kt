@@ -59,7 +59,7 @@ class Forum5(
         val userPassword = readln()
 
         val newUser = User5(getNewUserId(), userLogin, userPassword, userEmail)
-        this.users.add(newUser)
+        users.add(newUser)
         return newUser
     }
 
@@ -80,42 +80,48 @@ class Forum5(
             messageText,
         )
         addMessageToThread(threadId, newMessageId)
-        this.messages.add(newMessage)
+        messages.add(newMessage)
     }
 
     fun printThread(threadId: Int) {
         val threadIndex = getThreadIndexbyId(threadId)
-        var message: Message5
-        this.threads[threadIndex].threadMessages.forEach {
-            message = getMessageById(it)
-            val author = getUserById(message.messageAuthorId)
-            println("${author.login} : ${message.messageText}")
+        if (threadIndex != null) {
+            var message: Message5?
+            threads[threadIndex].threadMessages.forEach {
+                message = getMessageById(it)
+                if (message != null) {
+                    val author = getUserById(message!!.messageAuthorId)
+                    if (author != null) {
+                        println("${author.login} : ${message!!.messageText}")
+                    }
+                }
+            }
         }
     }
 
-    fun getThreadIndexbyId(threadId: Int): Int {
+    fun getThreadIndexbyId(threadId: Int): Int? {
         threads.forEach {
             if (it.id == threadId) return threads.indexOf(it)
         }
-        return 0
+        return null
     }
 
     fun addMessageToThread(threadId: Int, messageId: Int) {
-        threads[getThreadIndexbyId(threadId)].threadMessages.add(messageId)
+        threads[getThreadIndexbyId(threadId)!!].threadMessages.add(messageId)
     }
 
-    fun getUserById(userId: Int): User5 {
+    fun getUserById(userId: Int): User5? {
         users.forEach {
             if (it.id == userId) return it
         }
-        return users[0]
+        return null
     }
 
-    fun getMessageById(messageId: Int): Message5 {
+    fun getMessageById(messageId: Int): Message5? {
         messages.forEach {
             if (it.id == messageId) return it
         }
-        return messages[0]
+        return null
     }
 
     private fun getNewUserId() = this.users.maxOf { it.id } + 1
@@ -147,9 +153,7 @@ class Thread5(
     val threadAuthorId: Int,
     val threadMessages: MutableList<Int>,
     val threadDate: Long = System.currentTimeMillis(),
-) {
-
-}
+)
 
 class Message5(
     val id: Int,
@@ -159,6 +163,4 @@ class Message5(
     val messageText: String,
     val messageDate: Long = System.currentTimeMillis(),
     val messageViews: Int = 0,
-) {
-
-}
+)
