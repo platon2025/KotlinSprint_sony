@@ -3,16 +3,7 @@ package lesson_13
 /** Created by Platon2025 */
 
 fun main() {
-    var contactList: MutableList<Contact4> = mutableListOf()
-
-    contactList.add(Contact4("Зинаида Прокофьевна", "89991005000", null))
-    contactList.add(Contact4("Джейсон Борн", "89017007700", "АО Фортуна"))
-    contactList.add(Contact4("Майк Вазовский", "89650545454", "Корпорация М"))
-
-    println("Телефонная книга:\n")
-    contactList.forEach {
-        it.printContact()
-    }
+    val contactList: MutableList<Contact4> = mutableListOf()
 
     println("Добавление нового контакта в Телефонную книгу")
     contactList += addContact()
@@ -27,14 +18,14 @@ fun addContact(): MutableList<Contact4> {
     var phoneNumber = ""
     var name: String? = null
     var company: String? = null
-    var extraContacts: MutableList<Contact4> = mutableListOf()
+    val extraContacts: MutableList<Contact4> = mutableListOf()
 
     while (true) {
         do {
             println("Введите номер телефона:")
             phoneNumber = readln().trim()
-            if (phoneNumber == "") println("Номер телефона является обязательным.")
-        } while (phoneNumber == "")
+            if (phoneNumber.isEmpty()) println("Номер телефона является обязательным.")
+        } while (phoneNumber.isEmpty())
 
         do {
             println("Введите Имя:")
