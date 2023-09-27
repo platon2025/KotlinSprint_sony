@@ -30,14 +30,14 @@ fun addContact(): MutableList<Contact4> {
         do {
             println("Введите Имя:")
             name = readln().trim()
-            if (name == "") {
+            if (name.isEmpty()) {
                 name = null
                 println("Так как вы не ввели имя, название Компании является обязательным")
             }
 
             println("Введите название Компании:")
             company = readln().trim()
-            if (company == "") {
+            if (company.isEmpty()) {
                 company = null
                 if (name == null) println("Необходимо ввести хотя бы один параметр Имя или название Компании")
             }
