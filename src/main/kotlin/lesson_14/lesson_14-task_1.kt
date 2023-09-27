@@ -8,7 +8,11 @@ fun main() {
     ship.showCapacity()
 }
 
-class StandardShip(val type: String = "Стандартный", val capacity: Int = 120, val speed: Int = 24) {
+class StandardShip(
+    val type: String = "Стандартный",
+    val capacity: Int = 120,
+    val speed: Int = 24,
+) {
     fun showSpeed() {
         println("Скорость корабля $type - $speed узлов")
     }
