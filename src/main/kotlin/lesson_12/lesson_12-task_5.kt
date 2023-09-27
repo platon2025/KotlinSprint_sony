@@ -34,18 +34,17 @@ class Weather5(
 ) {
 
     fun printWeatherStats(controlPoints: MutableList<Weather5>) {
-        var dayTempsSum = 0
-        var nightTempsSum = 0
         var rainyDaysNumber = 0
         val averageAtmPressure = controlPoints.sumOf { it.atmPressure } / controlPoints.size
+        val dayTempList: MutableList<Int> = mutableListOf()
+        val nightTempList: MutableList<Int> = mutableListOf()
 
         controlPoints.forEach {
-            dayTempsSum += it.dayTemp
-            nightTempsSum += it.nightTemp
+            dayTempList += it.dayTemp
+            nightTempList += it.nightTemp
             if (it.isRainy == true) rainyDaysNumber++
         }
 
-        println("Статистика за ${controlPoints.size} дней :\nСредняя дневная температура : ${dayTempsSum / controlPoints.size}\nСредняя ночная температура : ${nightTempsSum / controlPoints.size}\nСреднее атм.давление : $averageAtmPressure\nКоличество дождливых дней : $rainyDaysNumber")
-
+        println("Статистика за ${controlPoints.size} дней :\nСредняя дневная температура : ${dayTempList.average()}\nСредняя ночная температура : ${nightTempList.average()}\nСреднее атм.давление : $averageAtmPressure\nКоличество дождливых дней : $rainyDaysNumber")
     }
 }
