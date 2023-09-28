@@ -6,8 +6,8 @@ fun main() {
     val shipSpeed: Map<String, Int> = mapOf(Pair("standard", 24), Pair("cargo", 20), Pair("iceBreaker", 18))
     val shipCapacity: Map<String, Int> = mapOf(Pair("standard", 120), Pair("cargo", 240), Pair("iceBreaker", 80))
 
-    val cargoShip = cargoShip2("Джамбо", shipCapacity["cargo"]!!, shipSpeed["cargo"]!!, "сухогруз")
-    val iceBreaker = iceBreaker2("Ленин", shipCapacity["iceBreaker"]!!, shipSpeed["iceBreaker"]!!, 3)
+    val cargoShip = CargoShip2("Джамбо", shipCapacity["cargo"]!!, shipSpeed["cargo"]!!, "сухогруз")
+    val iceBreaker = IceBreaker2("Ленин", shipCapacity["iceBreaker"]!!, shipSpeed["iceBreaker"]!!, 3)
 
     cargoShip.showSpeed()
     cargoShip.showCapacity()
@@ -36,7 +36,7 @@ open class Ship2(
 }
 
 
-class cargoShip2(
+class CargoShip2(
     name: String,
     capacity: Int,
     speed: Int,
@@ -55,7 +55,7 @@ class cargoShip2(
     }
 }
 
-class iceBreaker2(
+class IceBreaker2(
     name: String,
     capacity: Int,
     speed: Int,
