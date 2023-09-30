@@ -3,13 +3,20 @@ package lesson_14
 /** Created by Platon2025 */
 
 fun main() {
-    val body1 = Planet("Татуин", true, true, true, true, listOf("Гомрассен", "Гермесса"))
-    val body2 = Satellite("Гомрассен", true, false, false, true, "Татуин")
-    val body3 = Satellite("Гермесса", false, false, false, true, "Татуин")
 
-    println("Планета ${body1.name} имеет ${body1.satellitesList.size} спутника")
-    println("${body2.name} является спутником планеты ${body2.parentPlanet}")
-    println("${body3.name} является спутником планеты ${body3.parentPlanet}")
+    val planet = Planet(
+        "Татуин", true, true, true, true,
+        listOf(
+            Satellite("Гомрассен", true, false, false, true, "Татуин"),
+            Satellite("Гермесса", false, false, false, true, "Татуин")
+        )
+    )
+
+    println("Планета ${planet.name} имеет ${planet.satellitesList.size} спутника")
+
+    planet.satellitesList.forEach {
+        println("${it.name} является спутником планеты ${it.parentPlanet}")
+    }
 
 }
 
@@ -27,7 +34,7 @@ class Planet(
     hasAutmosphere: Boolean,
     hasWater: Boolean,
     isLandable: Boolean,
-    val satellitesList: List<String>,
+    val satellitesList: List<Satellite>,
 ) : Celestial(name, isHabitable, hasAutmosphere, hasWater, isLandable)
 
 class Satellite(
